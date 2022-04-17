@@ -28,16 +28,18 @@ function List({ match }) {
             <table className="table table-striped">
                 <thead>
                     <tr>
-                        <th style={{ width: '50%' }}>Name</th>
-                        <th style={{ width: '30%' }}>Cost</th>
-                        <th style={{ width: '20%' }}></th>
+                        <th style={{ width: '30%' }}>Name</th>
+                        <th style={{ width: '20%' }}>Phone Number</th>
+                        <th style={{ width: '40%' }}>Address</th>
+                        <th style={{ width: '10%' }}></th>
                     </tr>
                 </thead>
                 <tbody>
                     {outlets && outlets.map(outlet =>
                         <tr key={outlet.id}>
                             <td>{outlet.Name}</td>
-                            <td>{outlet.Cost}</td>
+                            <td>{outlet.Phone}</td>
+                            <td>{outlet.Address}</td>
                             <td style={{ whiteSpace: 'nowrap' }}>
                                 <Link to={`${path}/edit/${outlet.id}`} className="btn btn-sm btn-primary mr-1">Edit</Link>
                                 <button onClick={() => deleteOutlet(outlet.id)} className="btn btn-sm btn-danger btn-delete-user" disabled={outlet.isDeleting}>

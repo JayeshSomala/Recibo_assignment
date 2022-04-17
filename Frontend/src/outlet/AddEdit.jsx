@@ -14,8 +14,10 @@ function AddEdit({ history, match }) {
     const validationSchema = Yup.object().shape({
         Name: Yup.string()
             .required('Name is required'),
-        Cost: Yup.number()
-            .required('Cost is required'),
+        Phone: Yup.number()
+            .required('Phone number is required'),
+        Address: Yup.string()
+            .required('Address is required'),
     });
 
     // functions to build form returned by useForm() hook
@@ -51,7 +53,7 @@ function AddEdit({ history, match }) {
         if (!isAddMode) {
             // get outlet and set form fields
             outletService.getById(id).then(outlet => {
-                const fields = ['Name', 'Cost'];
+                const fields = ['Name', 'Phone', 'address'];
                 fields.forEach(field => setValue(field, outlet[field]));
             });
         }
@@ -67,9 +69,14 @@ function AddEdit({ history, match }) {
                     <div className="invalid-feedback">{errors.Name?.message}</div>
                 </div>
                 <div className="form-group col-5">
-                    <label>Price</label>
-                    <input Name="Cost" type="number" ref={register} className={`form-control ${errors.Cost ? 'is-invalid' : ''}`} />
-                    <div className="invalid-feedback">{errors.Cost?.message}</div>
+                    <label>Phone Phone</label>
+                    <input Name="Phone" type="Phone" ref={register} className={`form-control ${errors.Phone ? 'is-invalid' : ''}`} />
+                    <div className="invalid-feedback">{errors.Phone?.message}</div>
+                </div>
+                <div className="form-group col-5">
+                    <label>Address</label>
+                    <input Name="Address" type="text" ref={register} className={`form-control ${errors.Address ? 'is-invalid' : ''}`} />
+                    <div className="invalid-feedback">{errors.Address?.message}</div>
                 </div>
             </div>
             <div className="form-group">
