@@ -6,6 +6,7 @@ import { Home } from '../home/Index';
 import { Users } from '../users/Index';
 import { Products } from '../product/Index';
 import { Outlets } from '../outlet/Index';
+import { Orders } from '../order/Index';
 
 function App() {
     const { pathname } = useLocation();  
@@ -21,6 +22,7 @@ function App() {
                     <Route path="/users" component={Users} />
                     <Route path="/products" component={Products} />
                     <Route path="/outlets" component={Outlets} />
+                    <Route path="/orders" component={Orders} />
                     <Redirect from="*" to="/" />
                 </Switch>
             </div>

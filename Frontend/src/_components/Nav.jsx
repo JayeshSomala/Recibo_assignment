@@ -9,7 +9,7 @@ function Nav() {
                 <NavLink to="/users" className="nav-item nav-link">User</NavLink>
                 <NavLink to="/products" className="nav-item nav-link">Product</NavLink>
                 <NavLink to="/outlets" className="nav-item nav-link">Outlet</NavLink>
-                <NavLink to="/users" className="nav-item nav-link">Order</NavLink>
+                <NavLink to="/orders" className="nav-item nav-link">Order</NavLink>
             </div>
         </nav>
     );

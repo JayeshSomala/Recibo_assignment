@@ -29,17 +29,17 @@ function List({ match }) {
                 <thead>
                     <tr>
                         <th style={{ width: '30%' }}>Name</th>
-                        <th style={{ width: '30%' }}>email</th>
-                        <th style={{ width: '30%' }}>Role</th>
+                        <th style={{ width: '30%' }}>Phone Number</th>
+                        <th style={{ width: '30%' }}>Reporting Manager</th>
                         <th style={{ width: '10%' }}></th>
                     </tr>
                 </thead>
                 <tbody>
                     {users && users.map(user =>
                         <tr key={user.id}>
-                            <td>{user.title} {user.firstName} {user.lastName}</td>
-                            <td>{user.email}</td>
-                            <td>{user.role}</td>
+                            <td>{user.Name}</td>
+                            <td>{user.Phone}</td>
+                            <td>{user.Manager}</td>
                             <td style={{ whiteSpace: 'nowrap' }}>
                                 <Link to={`${path}/edit/${user.id}`} className="btn btn-sm btn-primary mr-1">Edit</Link>
                                 <button onClick={() => deleteUser(user.id)} className="btn btn-sm btn-danger btn-delete-user" disabled={user.isDeleting}>
